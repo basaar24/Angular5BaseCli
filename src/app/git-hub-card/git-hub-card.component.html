@@ -1,0 +1,11 @@
+<div class="horizontal-container">
+  <img width="75px" height="75px" [src]="gitHubCard.avatar_url" /> <!-- Property binding -->
+  <div>
+    <div>Nombre: {{gitHubCard.name}}</div> <!-- One way binding -->
+    <div>UserName: {{gitHubCard.login}}</div>
+    <div class="horizontal-container container-space">
+      <div>Followers: {{gitHubCard.followers}}</div>
+      <div>Following: {{gitHubCard.following}}</div>
+    </div>
+  </div>
+</div>
