@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
+import { catchError } from "rxjs/operators";
 
 @Injectable()
 export class ConsumeService {
@@ -11,7 +12,7 @@ export class ConsumeService {
   getCities() {
     return this._http
         .get(this._url, {responseType: 'json'})
-        .catch(this.handleError);
+        .pipe(catchError(this.handleError));
   }
 
   handleError(error: any) {
